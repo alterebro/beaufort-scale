@@ -71,3 +71,10 @@ $ npm run build
 # or alternatively just:
 $ gulp
 ```
+
+## Tests
+
+```sh
+$ npm test
+$ npm run cov 	# with test coverage
+```

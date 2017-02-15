@@ -5,7 +5,8 @@
   "main": "dist/beaufort-scale.min.js",
   "scripts": {
     "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.js",
+	"cov": "tap test/*.js --cov"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.1",
     "jshint": "^2.8.0",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "tap": "^10.1.1"
   }
 }
