@@ -1,4 +1,4 @@
-(function (global) {
+;(function (global) {
 	'use strict';
 
 	var grades = [
@@ -20,15 +20,15 @@
 	var remap = function(range_from, range_to, value) {
 		var v = Math.floor(((value - range_from)*100) / (range_to - range_from)) / 100;
 		return (v<0) ? 0 : v;
-	}
+	};
 
 	var beaufort = function(speed, options) {
 
-		var options = options || {};
+		var opts = options || {};
 		var settings = {
-			lang: options.lang || 'en',
-			int: options.int || false
-		}
+			lang: opts.lang || 'en',
+			int: opts.int || false
+		};
 
 		var grade = false;
 		grades.forEach(function(el, i) {
@@ -40,9 +40,9 @@
 		var data = {
 			desc : grades[grade].desc[settings.lang],
 			grade : ((settings.int) ? grade : (grade + remap(grades[grade].speed, ((grades[grade+1]) ? grades[grade+1].speed : false), speed)))
-		}
+		};
 		return data;
-	}
+	};
 
     if (typeof define === 'function' && define.amd) {
         define(function () { return beaufort; });
@@ -54,5 +54,5 @@
     } else {
         global.beaufort = beaufort;
     }
-	
+
 })(this);
