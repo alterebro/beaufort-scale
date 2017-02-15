@@ -3,15 +3,27 @@
 Translate speed to Beaufort wind force scale in both Node and the Browser. 
 Returns the [Beaufort Scale](https://en.wikipedia.org/wiki/Beaufort_scale) intensity grade number from a given wind speed (in Kilometres per hour).
 
+[![npm version](https://badge.fury.io/js/beaufort-scale.svg)](https://badge.fury.io/js/beaufort-scale)
 
-### Include the module
-```js
-// Node
-var beaufort = require('beaufort-scale')
+### Install and Include the module
 
-// Browser
-<script src="/your/path/to/beaufort-scale.js"></script>
+```sh
+$ npm install beaufort-scale
 ```
+
+- **Node**
+
+	```js
+	var beaufort = require('beaufort-scale')
+	```
+
+- **Browser**
+
+	```html
+	<script src="/your/path/to/beaufort-scale.js"></script>
+	```
+
+--
 
 ### Usage
 ```js
@@ -42,3 +54,5 @@ beaufort(40, {lang: 'es', int: true})
 	desc: "Brisa fuerte"
 }
 ```
+
+--
