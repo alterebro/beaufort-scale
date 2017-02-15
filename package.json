@@ -1,12 +1,12 @@
 {
   "name": "beaufort-scale",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Translate speed to Beaufort wind force scale in both Node and the Browser",
   "main": "dist/beaufort-scale.min.js",
   "scripts": {
     "build": "gulp",
     "test": "tap test/*.js",
-	"cov": "tap test/*.js --cov"
+    "cov": "tap test/*.js --cov"
   },
   "repository": {
     "type": "git",
