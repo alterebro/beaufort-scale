@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/alterebro/beaufort-scale#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-jshint": "^2.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.1",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.2.1",
-    "tap": "^10.1.1"
+    "tap": "^14.10.6"
   }
 }
