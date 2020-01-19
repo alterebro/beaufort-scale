@@ -1,21 +1,11 @@
 ;(function (global) {
 	'use strict';
 
-	var grades = [
-		{ speed: 0, desc: { en: 'Calm', es: 'Calma' } },
-		{ speed: 2, desc: { en: 'Light air', es: 'Ventolina' } },
-		{ speed: 6, desc: { en: 'Light breeze', es: 'Brisa muy débil' } },
-		{ speed: 12, desc: { en: 'Gentle breeze', es: 'Brisa ligera' } },
-		{ speed: 20, desc: { en: 'Moderate breeze', es: 'Brisa moderada' } },
-		{ speed: 29, desc: { en: 'Fresh breeze', es: 'Brisa fresca' } },
-		{ speed: 39, desc: { en: 'Strong breeze', es: 'Brisa fuerte' } },
-		{ speed: 50, desc: { en: 'High wind', es: 'Viento fuerte' } },
-		{ speed: 62, desc: { en: 'Gale', es: 'Temporal' } },
-		{ speed: 75, desc: { en: 'Strong gale', es: 'Temporal fuerte' } },
-		{ speed: 89, desc: { en: 'Storm', es: 'Temporal duro' } },
-		{ speed: 103, desc: { en: 'Violent Storm', es: 'Borrasca' } },
-		{ speed: 118, desc: { en: 'Hurricane', es: 'Huracán' } }
-	];
+	var winds = [ 0, 2, 6, 12, 20, 29, 39, 50, 62, 75, 89, 103, 118 ];
+	var langs = {
+		'en' : ['Calm', 'Light air', 'Light breeze', 'Gentle breeze', 'Moderate breeze', 'Fresh breeze', 'Strong breeze', 'High wind', 'Gale', 'Strong gale', 'Storm', 'Violent Storm', 'Hurricane'],
+		'es' : ['Calma', 'Ventolina', 'Brisa muy débil', 'Brisa ligera', 'Brisa moderada', 'Brisa fresca', 'Brisa fuerte', 'Viento fuerte', 'Temporal', 'Temporal fuerte', 'Temporal duro', 'Borrasca', 'Huracán']
+	};
 
 	var remap = function(range_from, range_to, value) {
 		var v = Math.floor(((value - range_from)*100) / (range_to - range_from)) / 100;
@@ -30,6 +20,11 @@
 			int: opts.int || false
 		};
 
+		var grades = [];
+		for ( var i = 0; i < winds.length; i++ ) {
+			grades.push( { speed : winds[i], desc : langs[settings.lang][i] } );
+		}
+
 		var grade = false;
 		grades.forEach(function(el, i) {
 			if ( el.speed > speed && !grade ) {
@@ -38,7 +33,7 @@
 		});
 		grade = (grade) ? (grade-1) : (grades.length-1);
 		var data = {
-			desc : grades[grade].desc[settings.lang],
+			desc : grades[grade].desc,
 			grade : ((settings.int) ? grade : (grade + remap(grades[grade].speed, ((grades[grade+1]) ? grades[grade+1].speed : false), speed)))
 		};
 		return data;
