@@ -17,6 +17,13 @@ var tap = require('tap'),
 		tap.equal( c.grade, 6 );
 		tap.equal( c.desc, "g" );
 
+	var greek = beaufort(1, {
+			lang: ["Άπνοια", "Σχεδόν άπνοια", "Πολύ ασθενής", "Ασθενής", "Σχεδόν μέτριος", "Μέτριος", "Ισχυρός", "Σχεδόν θυελλώδης", "Θυελλώδης", "Πολύ θυελλώδης", "Θύελλα", "Σφοδρή θύελλα", "Τυφώνας"],
+			int : true
+		});
+		tap.equal( greek.grade, 0 );
+		tap.equal( greek.desc, "Άπνοια" );
+
 	// Some random values
 	var values = [ -10, 0, 2, 5, 8.65, 12, 40, 95, 120, 140, 33456.456 ];
 	for (var i = 0; i < values.length; i++) {
