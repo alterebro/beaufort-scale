@@ -17,8 +17,8 @@
 		var opts = options || {};
 
 			if ( typeof opts.lang == 'object' ) {
-				langs['add'] = options.lang;
-				opts.lang = 'add';
+				langs.arr = options.lang;
+				opts.lang = 'arr';
 			}
 
 		var settings = {

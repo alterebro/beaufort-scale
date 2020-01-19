@@ -63,13 +63,10 @@ beaufort(40, {lang: 'es', int: true})
 }
 ```
 
-With an array of values as a `lang` parameter, for example with the greek strings as provided by @groubis
+With an array of values as a `lang` parameter, for example with the greek strings as provided by [@groubis](https://github.com/alterebro/beaufort-scale/issues/1)
 
 ```js
-beaufort(1, {
-		lang: ["Άπνοια", "Σχεδόν άπνοια", "Πολύ ασθενής", "Ασθενής", "Σχεδόν μέτριος", "Μέτριος", "Ισχυρός", "Σχεδόν θυελλώδης", "Θυελλώδης", "Πολύ θυελλώδης", "Θύελλα", "Σφοδρή θύελλα", "Τυφώνας"],
-		int : true
-	});
+beaufort(1, { lang: ["Άπνοια", "Σχεδόν άπνοια", "Πολύ ασθενής", "Ασθενής", "Σχεδόν μέτριος", "Μέτριος", "Ισχυρός", "Σχεδόν θυελλώδης", "Θυελλώδης", "Πολύ θυελλώδης", "Θύελλα", "Σφοδρή θύελλα", "Τυφώνας"], int : true });
 
 // returns the object:
 {

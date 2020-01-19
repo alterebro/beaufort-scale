@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp",
     "test": "tap test/*.js",
-    "cov": "tap test/*.js --cov"
+    "cov": "tap test/*.js --cov",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
