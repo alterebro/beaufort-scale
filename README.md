@@ -47,8 +47,9 @@ beaufort(40)
 
 There are two options that can be sent to the beaufort function. These are optional and have to be passed as an Object.
 
-- **lang** : the language of the description string ( *desc* ). Two possible values, *en* for English or *es* for Spanish, the default value is *en*.  
-- **int** : Boolean to determine if the grade returns an integer or a floating number, default value is *false*.
+- **lang** : `String` or `Array` the language of the description string ( *desc* ). As a string there are two possible values, *en* for English or *es* for Spanish, the default value is *en*.  
+As an array you can add your own language string values
+- **int** : `Boolean` determines if the grade returns an integer or a floating number, default value is *false*.
 
 ### Example
 
@@ -61,6 +62,22 @@ beaufort(40, {lang: 'es', int: true})
 	desc: "Brisa fuerte"
 }
 ```
+
+With an array of values as a `lang` parameter, for example with the greek strings as provided by @groubis
+
+```js
+beaufort(1, {
+		lang: ["Άπνοια", "Σχεδόν άπνοια", "Πολύ ασθενής", "Ασθενής", "Σχεδόν μέτριος", "Μέτριος", "Ισχυρός", "Σχεδόν θυελλώδης", "Θυελλώδης", "Πολύ θυελλώδης", "Θύελλα", "Σφοδρή θύελλα", "Τυφώνας"],
+		int : true
+	});
+
+// returns the object:
+{
+	grade: 0,
+	desc: "Άπνοια"
+}
+```
+
 
 ---
 
