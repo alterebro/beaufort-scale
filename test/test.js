@@ -10,6 +10,13 @@ var tap = require('tap'),
 		tap.equal( b.grade, 6 );
 		tap.equal( b.desc, "Brisa fuerte" );
 
+	var c = beaufort(40, {
+			lang: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
+			int: true
+		});
+		tap.equal( c.grade, 6 );
+		tap.equal( c.desc, "g" );
+
 	// Some random values
 	var values = [ -10, 0, 2, 5, 8.65, 12, 40, 95, 120, 140, 33456.456 ];
 	for (var i = 0; i < values.length; i++) {

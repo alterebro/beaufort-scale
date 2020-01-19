@@ -15,6 +15,12 @@
 	var beaufort = function(speed, options) {
 
 		var opts = options || {};
+
+			if ( typeof opts.lang == 'object' ) {
+				langs['add'] = options.lang;
+				opts.lang = 'add';
+			}
+
 		var settings = {
 			lang: opts.lang || 'en',
 			int: opts.int || false
