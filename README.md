@@ -1,9 +1,8 @@
-# beaufort-scale
+# beaufort-scale [![npm](https://img.shields.io/npm/v/beaufort-scale.svg?label=&color=24292e)](https://github.com/alterebro/beaufort-scale/releases/latest)
 
 Translate speed to Beaufort wind force scale in both Node and the Browser.
 Returns the [Beaufort Scale](https://en.wikipedia.org/wiki/Beaufort_scale) intensity grade number from a given wind speed (in Kilometres per hour).
 
-[![npm version](https://badge.fury.io/js/beaufort-scale.svg)](https://badge.fury.io/js/beaufort-scale)
 
 ## Install and Include the module
 
